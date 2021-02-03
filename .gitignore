@@ -149,4 +149,5 @@ dmypy.json
 cython_debug/
 
 /media/
-/static/hero-banner.png
+/static/img/
+/static/fonts/
