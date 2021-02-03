@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="{% static 'styles.min.css' %}">
 </head>
 <body>
+  {% for post in most_popular_posts %}
+  <p>{{post.title}}<br>{{post.image_url}}<br>{{post.published_at}}</p>
+  {% endfor %}
   <!--================Header Menu Area =================-->
   <header class="header_area">
     <div class="main_menu">
@@ -56,6 +59,28 @@
       </div>
     </section>
     <!--================Hero Banner end =================-->  
+
+    <!--================ Most popular posts slider start =================-->
+    <section>
+      <div class="container">
+        <div class="d-flex">
+          {% for post in most_popular_posts %}
+            <div class="flex-fill" style="margin-right: 30px;">
+              <div class="card blog__slide text-center">
+                <div class="blog__slide__img">
+                  <img class="card-img rounded-0" src="{{post.image_url}}" alt="">
+                </div>
+                <div class="blog__slide__content">
+                  <h3><a href="#">{{post.title}}</a></h3>
+                  <p>{{post.published_at}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!--================ Most popular posts slider end =================-->
 
     <!--================ Blog slider start =================-->
     <section>
